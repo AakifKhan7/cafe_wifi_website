@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-center">Add a New Cafe</h2>
+
+<form action="{{ url_for('add_cafe') }}" method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label">Cafe Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="map_url" class="form-label">Map URL</label>
+        <input type="text" class="form-control" id="map_url" name="map_url" required>
+    </div>
+    <div class="mb-3">
+        <label for="img_url" class="form-label">Image URL</label>
+        <input type="text" class="form-control" id="img_url" name="img_url" required>
+    </div>
+    <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" class="form-control" id="location" name="location" required>
+    </div>
+    <div class="mb-3">
+        <label for="seats" class="form-label">Seats</label>
+        <input type="text" class="form-control" id="seats" name="seats" required>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="has_toilet" id="has_toilet">
+        <label class="form-check-label" for="has_toilet">Has Toilet</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="has_wifi" id="has_wifi">
+        <label class="form-check-label" for="has_wifi">Has Wifi</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="has_sockets" id="has_sockets">
+        <label class="form-check-label" for="has_sockets">Has Sockets</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="can_take_calls" id="can_take_calls">
+        <label class="form-check-label" for="can_take_calls">Can Take Calls</label>
+    </div>
+    <div class="mb-3">
+        <label for="coffee_price" class="form-label">Coffee Price</label>
+        <input type="text" class="form-control" id="coffee_price" name="coffee_price">
+    </div>
+    <button type="submit" class="btn btn-success">Add Cafe</button>
+    <a href="{{ url_for('home') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
